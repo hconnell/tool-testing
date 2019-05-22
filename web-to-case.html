@@ -2,13 +2,13 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Tool Testing Home</title>
 		<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+		<title>Case Creation Form</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="Description" lang="en" content="ADD SITE DESCRIPTION">
 		<meta name="author" content="ADD AUTHOR INFORMATION">
 		<meta name="robots" content="index, follow">
+
 
 		<!-- icons -->
 		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -18,38 +18,67 @@
 		<link rel="stylesheet" href="assets/css/styles.css">		
 	</head>
 	<body>
+		<div class="header">
+			<div class="container">
+				<h1 class="header-heading">Publisher Support Case Creation</h1>
+			</div>
+		</div>
+		<div class="nav-bar">
+			<div class="container">
+				<ul class="nav">
+					<li><a href="/tool-testing/flights_test_page.html">Flights</a></li>
+					<li><a href="/tool-testing/hotel_test_page.html">Hotels</a></li>
+					<li><a href="/tool-testing/car_test_page.html">Cars</a></li>
+					<li><a href="/tool-testing/web-to-case.html">Case Form</a></li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="content">
+			<div class="container">
+				<div class="main">
+					<h1>Case Form</h1>
+					<hr>
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
 
-<form action="https://intentmedia--HeatherSB.cs27.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+					<form action="https://intentmedia--HeatherSB.cs27.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
-<input type=hidden name="orgid" value="00D22000000Cy6o">
-<input type=hidden name="retURL" value="https://hconnell.github.io/tool-testing/">
+					<input type=hidden name="orgid" value="00D22000000Cy6o">
+					<input type=hidden name="retURL" value="https://hconnell.github.io/tool-testing/">
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-<!--  these lines if you wish to test in debug mode.                          -->
-<!--  <input type="hidden" name="debug" value=1>                              -->
-<!--  <input type="hidden" name="debugEmail"                                  -->
-<!--  value="heather.connell@intent.com">                                     -->
-<!--  ----------------------------------------------------------------------  -->
+					<!--  ----------------------------------------------------------------------  -->
+					<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+					<!--  these lines if you wish to test in debug mode.                          -->
+					<!--  <input type="hidden" name="debug" value=1>                              -->
+					<!--  <input type="hidden" name="debugEmail"                                  -->
+					<!--  value="heather.connell@intent.com">                                     -->
+					<!--  ----------------------------------------------------------------------  -->
 
-<label for="company">Company</label><input  id="company" maxlength="80" name="company" size="20" type="text" /><br>
+					<label for="company">Company</label><input  id="company" maxlength="80" name="company" size="20" type="text" /><br>
 
-<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
+					<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+					<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+					<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
 
-<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+					<label for="subject">Subject</label><input  id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
 
-<label for="description">Description</label><textarea name="description"></textarea><br>
+					<label for="description">Description</label><textarea name="description"></textarea><br>
 
-<input type="submit" name="submit">
+					<input type="submit" name="submit">
 
-</form>
-</body>
+					</form>
+					<hr>
+				</div>
+			</div>
+		</div>			
+		<div class="footer">
+			<div class="container">
+				&copy; Copyright 2015
+			</div>
+		</div>
+	</body>
 </html>
-
