@@ -1,48 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-		<title>Lead Creation Form</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="Description" lang="en" content="Version1.1">
-		<meta name="author" content="ADD AUTHOR INFORMATION">
-		<meta name="robots" content="index, follow">
-
-
-		<!-- icons -->
-		<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-		<link rel="shortcut icon" href="favicon.ico">
-
-		<!-- Override CSS file - add your own CSS rules -->
-		<link rel="stylesheet" href="assets/css/styles.css">		
-	</head>
-	<body>
-		<div class="header">
-			<div class="container">
-				<h1 class="header-heading">Publisher Support Case Creation</h1>
-			</div>
-		</div>
-		<div class="nav-bar">
-			<div class="container">
-				<ul class="nav">
-					<li><a href="/tool-testing">Home</a></li>
-					<li><a href="/tool-testing/flights_test_page.html">Flights</a></li>
-					<li><a href="/tool-testing/hotel_test_page.html">Hotels</a></li>
-					<li><a href="/tool-testing/car_test_page.html">Cars</a></li>
-					<li><a href="/tool-testing/web-to-case.html">Case Form</a></li>
-
-				</ul>
-			</div>
-		</div>
-		<div class="content">
-			<div class="container">
-				<div class="main">
-					<h1>Case Form</h1>
-					<hr>
-
-<h1>This is a Marketing Lead Form </h1>
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
 <!--  If necessary, please modify the charset parameter to specify the        -->
@@ -50,6 +5,10 @@
 <!--  ----------------------------------------------------------------------  -->
 
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+ function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+</script>
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
@@ -57,26 +16,43 @@
 
 <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
+<input type=hidden name='captcha_settings' value='{"keyname":"intent_corporate_site","fallback":"true","orgId":"00D37000000KdJ8","ts":""}'>
 <input type=hidden name="oid" value="00D37000000KdJ8">
-<input type=hidden name="retURL" value="https://hconnell.github.io/tool-testing">
 <input type=hidden name="lead_source" value="Intent Website">
 <input type=hidden name="Campaign_ID" value="7011S000000A65xQAC">
+<input type=hidden name="retURL" value="http://www.intent.com/thank-you">
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
 <!--  these lines if you wish to test in debug mode.                          -->
-  <input type="hidden" name="debug" value=1>                              
+<!--  <input type="hidden" name="debug" value=1>                              -->
 <!--  <input type="hidden" name="debugEmail"                                  -->
 <!--  value="heather.connell@intent.com">                                     -->
 <!--  ----------------------------------------------------------------------  -->
 
-<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name"  type="text" /><br>
 
-<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" type="text" /><br>
+<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
 
-<label for="email">Email</label><input  id="email" maxlength="80" name="email"  type="text" /><br>
+<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
 
-<label for="company">Company</label><input  id="company" maxlength="40" name="company"  type="text" /><br>
+<label for="title">Title</label><input  id="title" maxlength="40" name="title" size="20" type="text" /><br>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+
+<label for="company">Company</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+
+<label for="industry">Industry</label><select  id="industry" name="industry"><option value="">--None--</option><option value="Activities">Activities</option>
+<option value="Airline">Airline</option>
+<option value="Arbitrage">Arbitrage</option>
+<option value="Content (Travel)">Content (Travel)</option>
+<option value="Content (Non-Travel)">Content (Non-Travel)</option>
+<option value="Meta">Meta</option>
+<option value="OTA">OTA</option>
+<option value="Search Engine">Search Engine</option>
+<option value="Supplier">Supplier</option>
+<option value="Tour Operator">Tour Operator</option>
+<option value="Other">Other</option>
+</select><br>
 
 <label for="country_code">Country</label><select  id="country_code" name="country_code"><option value="">--None--</option><option value="AF">AF</option>
 <option value="AX">AX</option>
@@ -319,32 +295,7 @@
 <option value="ZW">ZW</option>
 </select><br>
 
-<label for="title">Title</label><input  id="title" maxlength="40" name="title" type="text" /><br>
-
-<label for="industry">Industry</label><select  id="industry" name="industry"><option value="">--None--</option><option value="Activities">Activities</option>
-<option value="Airline">Airline</option>
-<option value="Arbitrage">Arbitrage</option>
-<option value="Content (Travel)">Content (Travel)</option>
-<option value="Content (Non-Travel)">Content (Non-Travel)</option>
-<option value="Meta">Meta</option>
-<option value="OTA">OTA</option>
-<option value="Search Engine">Search Engine</option>
-<option value="Supplier">Supplier</option>
-<option value="Tour Operator">Tour Operator</option>
-<option value="Other">Other</option>
-</select><br>
-
+<div class="g-recaptcha" data-sitekey="6LfSvqsUAAAAAPGy5uLIjRWoJGuJ_VKhYvXfeT6z"></div><br>
 <input type="submit" name="submit">
 
 </form>
-					<hr>
-				</div>
-			</div>
-		</div>			
-		<div class="footer">
-			<div class="container">
-				&copy; Copyright 2015
-			</div>
-		</div>
-	</body>
-</html>
